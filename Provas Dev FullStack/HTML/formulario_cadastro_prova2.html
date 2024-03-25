@@ -1,0 +1,77 @@
+<!-- Nessa atividade, você deve criar um formulário em uma página web que atenda aos seguintes requisitos:
+
+1.Incluir um campo de texto para o usuário inserir informações;
+2.Incluir um campo do tipo password para o usuário inserir apenas senhas;
+3.Incluir um campo de e-mail para o usuário inserir um endereço de e-mail válido;
+4.Incluir uma lista com 5 checkboxes para o usuário selecionar mais de uma opção;
+5.Incluir um radiobutton com 2 opções, onde apenas uma pode ser selecionada por vez;
+6.Incluir um botão de envio (submit) para enviar as informações do formulário;
+7.Incluir um botão para limpar (reset) o formulário e começar novamente.
+8.Certifique-se de que o seu formulário esteja funcional e siga as boas práticas de HTML para a criação dos elementos.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prova Aula 2</title>
+</head>
+<body>
+
+
+<h2>Formulário de Cadastro</h2>
+
+
+<form action="/processar-formulario" method="post">
+    <!-- Campo de Texto -->
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" name="nome" required><br>
+    
+
+    <!-- Campo de Senha -->
+    <label for="senha">Senha:</label>
+    <input type="password" id="senha" name="senha" required><br>
+
+
+    <!-- Campo de Email -->
+    <label for="email">E-mail:</label>
+    <input type="email" id="email" name="email" required><br><br>
+
+
+    <!-- Campo de Seleção (Dropdown) -->
+    <label for="estado">Estado:</label>
+    <select id="estado" name="pais">
+        <option value="SP">SAO PAULO</option>
+        <option value="MG">MINAS GERAIS</option>
+        <option value="RJ">RIO DE JANEIRO</option>
+        <option value="DF">DISTRITO FEDERAL</option>
+        <option value="ES">ESPIRITO SANTO</option>
+    </select><br><br>
+
+
+    <!-- Campo de Radio -->
+    <fieldset>
+        <legend>Gênero:</legend>
+        <input type="radio" id="masculino" name="genero" value="masculino" checked>
+        <label for="masculino">Masculino</label>
+
+
+        <input type="radio" id="feminino" name="genero" value="feminino">
+        <label for="feminino">Feminino</label>
+    </fieldset>
+
+
+    <!-- Campo de Textarea -->
+    <br><label for="comentario">Comentário:</label><br>
+    <textarea id="comentario" name="comentario" rows="4" cols="50"></textarea>
+
+
+    <!-- Botão de Envio / Limpar -->
+    <button type="submit">Enviar</button>
+    <button type="reset">Limpar</button>
+</form>
+
+
+</body>
+</html>
