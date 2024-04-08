@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Solicitar ao professor o número total de estudantes na turma
+        let totalEstudantes = parseInt(prompt("Digite o número total de estudantes na turma:"));
+
+        // Variáveis para armazenar a soma das notas, a maior e a menor nota
+        let somaNotas = 0;
+        let maiorNota = -Infinity;
+        let menorNota = Infinity;
+
+        // Loop para coletar as notas de cada aluno
+        let contador = 1;
+        while (contador <= totalEstudantes) {
+        let nota = parseFloat(prompt("Digite a nota do aluno " + contador + ":"));
+
+        // Atualizar a soma das notas
+        somaNotas += nota;
+
+        // Verificar se a nota é a maior ou a menor
+        if (nota > maiorNota) {
+            maiorNota = nota;
+        }
+        if (nota < menorNota) {
+            menorNota = nota;
+        }
+
+        contador++;
+        }
+
+        // Calcular a média da turma
+        let mediaTurma = somaNotas / totalEstudantes;
+
+        // Exibir os resultados
+        console.log("Média da turma: " + mediaTurma.toFixed(2));
+        console.log("Maior nota: " + maiorNota.toFixed(2));
+        console.log("Menor nota: " + menorNota.toFixed(2));
+
+    </script>
+</body>
+</html>
