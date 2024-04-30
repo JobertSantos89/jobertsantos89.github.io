@@ -1,0 +1,61 @@
+body {
+    font-family: 'Roboto', sans-serif; /* Fonte padrão para o corpo do texto */
+    margin: 0;
+    padding: 0;
+    background-image: url('background..jpg'); /* URL da imagem de fundo */
+    background-size: cover; /* Redimensiona a imagem para cobrir todo o elemento */
+    background-position: center; /* Centraliza a imagem */
+    color: #333; /* Texto escuro */
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8); /* Fundo branco translúcido */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+h1 {
+    font-family: 'Montserrat', sans-serif; /* Fonte para os títulos */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#tarefas {
+    margin-bottom: 20px;
+}
+
+.tarefa {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #fff; /* Cor de fundo das tarefas */
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tarefa span {
+    margin-right: auto; /* Move o span para a esquerda */
+}
+
+button {
+    padding: 8px 16px;
+    border: none;
+    background-color: #007bff; /* Cor do botão */
+    color: #fff; /* Cor do texto do botão */
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3; /* Cor do botão ao passar o mouse */
+}
+
+button:active {
+    background-color: #00428a; /* Cor do botão ao clicar */
+}
