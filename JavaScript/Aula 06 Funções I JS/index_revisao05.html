@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let alunos = ["Fernanda", "José", "Henrique"]
+        //arrays possuem posicionamentos que sempre começam em 0
+        alunos.push("Agata","Luiza") //Assume 
+        alunos.unshift("Agata") //Assume a posição zero empurrando os demais para frente
+        //alunos.pop() //retiram elementos do final
+        //alunos.shift() //retiram elementos do início
+        alunos.splice(4,0, "Luiza","Agata")//O primeira valor indica o índice inicial ()No caso retiraria o Henrique. O segundo termo indica a quantidade de índices a serem excluídos do array
+        for (let i = 0; i < alunos.length; i++) {
+            console.log(alunos[i].toUpperCase())
+        }
+
+        for (let aluno of alunos) {
+            //mesma ideia de loop
+        }
+        console.log(alunos)
+    </script>
+</body>
+</html>
