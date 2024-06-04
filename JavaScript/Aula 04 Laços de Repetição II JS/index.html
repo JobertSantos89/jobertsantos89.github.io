@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+	//1 Peça um numero para o usuário e calcule a tabuada deste numero utilizando o for. Imprima na tela no formato a seguir => N x 1 = 1, N x 2 = 2
+    
+    /*let numero = Number(prompt("Digite o número"))
+
+        for (let i = 0; i <= 25; i++) {
+            document.writeln(`${numero} x ${i} = ${numero * i} <br>`) 
+        }
+    
+    //2 Peça um numero para o usuário e Calcule O fatorial deste numero 5! -> 120
+ 	
+        let numero = Number(prompt("Digite o número"));
+        let resultado = 1;
+        
+        for (let i = numero; i > 0; i--) {
+            resultado *= i;
+            document.writeln(`${i}! = ${resultado} <br>`);
+        }*/
+    
+    //3 Peça um umero para o usuário e descubra se ele é primo ou não (Primos são divisíveis somente por ele mesmo e 1)
+
+        // Solicita um número ao usuário
+        /*let numero = parseInt(prompt("Digite um número:"));
+
+        // Verifica se o número é primo
+        let primo = true;
+
+        // Caso o número seja 1 ou menor, não é primo
+        if (numero <= 1) {
+            primo = false;
+        } else {
+            // Verifica se o número é divisível por algum outro número além de 1 e ele mesmo
+            for (let i = 2; i <= Math.sqrt(numero); i++) {
+                if (numero % i === 0) {
+                    primo = false;
+                    break;
+                }
+            }
+        }
+
+        // Exibe o resultado
+        if (primo) {
+            alert("É primo");
+        } else {
+            alert("Não é primo");
+        }*/
+
+        let nome = "Fernanda"
+        console.log(nome[nome.length - 1])
+
+        for (let caractere of nome) {
+            //console.log(caractere)
+        }
+
+        for (let i = 0; i < nome.length; i++) {
+            if (nome[i] === 'r') {
+                console.log(nome[i], i)
+            }
+        }
+        let nome = "Fernanda"
+
+        console.log(nome[nome.length - 1])
+
+        for (let caractere of nome) {
+            //console.log(caractere)
+        }
+
+        for (let i = 0; i < nome.length; i++) {
+            if (nome[i] === 'r') {
+                console.log(nome[i], i)
+            }
+        }
+    </script>
+</body>
+</html>

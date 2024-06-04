@@ -1,0 +1,140 @@
+Atividade 06
+Escreva um programa que irá solicitar ao usuário uma palavra e que
+imprimirá no console a palavra sem vogais.
+Atividade 07
+
+Escreva uma programa que irá receber um texto e mostrará no
+console se esse texto é um palíndromo ou não. (palíndromos são
+palavras que são lidas da mesma forma de trás pra frente) Ex:
+arara
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+	n// Peça um numero para o usuário e calcule a tabuada deste numero utilizando o for. Imprima na tela no formato a seguir => N x 1 = 1, N x 2 = 2
+        // Peça um numero para o usuário e Calcule O fatorial deste numero 5! -> 120
+ 	 //Peça um umero para o usuário e descubra se ele é primo ou não (Primos são divisíveis somente por ele mesmo e 1)
+
+        let usuário = Number(prompt("Digite um número"))
+
+        for ( ;usuario >= 0; usuario--) {
+            console.log(usuário)
+        }
+        
+        for (let i = 1; i <= usuario; i++) {
+           // console.log(i)
+        }
+    </script>
+</body>
+</html>
+
+----------------------- tabuada ----------------------------
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+        let numero = Number(prompt("Digite o número"))
+
+        for (let i = 1; i <= 25; i++) {
+            document.write(`${numero} x ${i} = ${numero * i} <br>`) 
+        }
+   </script> 
+</body>
+</html>
+
+------------------------ fatorial ----------------------------------
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let numero = Number(prompt("Digite o número"))
+        let resultado = 1
+
+        for (let i = numero; i > O; i--) {
+            //resultado = resultado * i
+            resultado *= i
+        }
+
+        alert(resultado)
+    </script>
+</body>
+</html>
+
+--------------------------------- primo ------------------------------
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let numero = Number(prompt("Digite o número"))
+        let ePrimo = true
+
+        for (let i = 2; i < numero; i++) {
+            if (numero % i === o) {
+                ePrimo = false
+
+                break
+            }
+        }
+
+        if (ePrimo) {
+            alert("É primo")
+        } else {
+            alert("Não é primo")
+        }
+    </script>
+</body>
+</html>
+
+-------------------------------- for ... of --------------------------------
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let nome = "Fernanda"
+
+        console.log(nome[nome.length - 1])
+
+        for (let caractere of nome) {
+            //console.log(caractere)
+        }
+
+        for (let i = 0; i < nome.length; i++) {
+            if (nome[i] === 'r') {
+                console.log(nome[i], i)
+            }
+        }
+        
+    </script>
+</body>
+</html>

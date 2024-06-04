@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Peça um numero para o usuário e calcule a tabuada deste numero utilizando o for. Imprima na tela no formato a seguir => N x 1 = 1, N x 2 = 2
+
+        /*let numero = Number(prompt("Digite um número"))
+        for (let i = 1; i <= 10; i++){
+            document.writeln(`${numero} x ${i} = ${numero * i}`);
+            document.writeln("<br>");
+        }*/
+
+        // Peça um numero para o usuário e Calcule O fatorial deste numero 5! -> 120
+
+        
+         /*let resultado = 1
+        for (let i = numero; i > 0; i--){
+            //resultado = resultado *= i
+            resultado *= i
+        }
+        alert(resultado)*/
+        
+ 	    //Peça um umero para o usuário e descubra se ele é primo ou não (Primos são divisíveis somente por ele mesmo e 1)
+
+         let numero = Number(prompt("Digite um número"))
+         let ePrimo = true
+         for (let i= 2; i < numero; i++){
+            if (numero % i === 0){
+                ePrimo = false
+
+                break
+            }
+         }
+        if (ePrimo) {
+            alert("É primo")
+        } else{
+            alert("Não é primo")
+        }
+    </script>
+</body>
+</html>
