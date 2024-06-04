@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let desejaContinuar = "s"
+        let soma = 0
+        let qtdNotas = 0
+        //desejaContinuar === "s" || desejaContinuar === "S"
+
+        while (desejaContinuar.toLowerCase() === "s") {
+            let nota = Number(prompt("Digite uma nota"))
+
+            soma += nota
+            qtdNotas++
+
+            let media = soma / qtdNotas
+
+            desejaContinuar = prompt(`Media atual: ${media.toFixed(1)}, Continuar? S - sim | N - não`)            
+        }
+    </script>
+</body>
+</html>
