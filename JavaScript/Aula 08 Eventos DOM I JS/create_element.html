@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            border: 1px solid black;
+            margin: 10px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <form>
+        <div>
+            <label>Nome do produto</label>
+            <input id="nome" type="text" />
+        </div>
+        <div>
+            <label>Preço</label>
+            <input id="preco" type="number" />
+        </div>
+        <div>
+            <label>Categoria</label>
+            <select id="categoria" oninput="">
+                <option value="">Selecione</option>
+                <option value="higiene">Higiene</option>
+                <option value="alimentacao">Alimentaçao</option>
+            </select>
+        </div>
+
+        <button type="button" onclick="cadastro()">Cadastrar</button>
+    </form>
+
+    <section id="produtos"></section>
+
+    <script>
+        const formulario = document.querySelector("form")
+        const produtos = document.querySelector("#produtos")
+
+        function cadastro() {
+            let div = document.createElement("div")
+
+            let nomeProduto = document.createElement("p")
+            nomeProduto.innerHTML = formulario.nome.value
+
+            let preco = document.createElement("p")
+            preco.innerHTML = formulario.preco.value
+
+            let categoria = document.createElement("p")
+            categoria.innerHTML = formulario.categoria.value
+
+            let img = document.createElement("img")
+            img.src = "https://odia.ig.com.br/_midias/jpg/2024/05/24/385x420/1_arroz-32946387.jpeg"
+
+            let input = document.createElement("input")
+            input.type = "checkobox"
+
+            div.append(nomeProduto, preco, categoria, img, input)
+
+            produtos.appendChild(div)
+        }
+    </script>
+</body>
+</html>

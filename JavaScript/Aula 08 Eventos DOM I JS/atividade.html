@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .toast {
+            position: fixed;
+            background-color: rgb(0, 214, 104);
+            padding: 10px;
+            right: 20px;
+            top: 20px;
+            transform: translate(120%);
+            transition: transform 0.3s;
+        }
+
+        #usuarios > div {
+            width: 250px;
+            background-color: rgb(164, 217, 255);
+            padding: 1rem;
+            border: 1px solid rgb(134, 134, 134);
+            border-radius:  5px;
+            box-shadow: 0 0 5px gray;
+            margin-block: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- criem um formulário com três entradas
+        - nome
+        - email
+        - senha
+        
+        criem uma função que vai validar os dados, se não tiver preenchido, vai avisar para o usuario e não fazer mais nada. Se tiver preenchido tudo, criem um card em cima desses dados aparecendo nome e email
+    -->
+    <div class="toast">messagem teste</div>
+    <form>
+        <div>
+            <label for="nome">Nome</label>
+            <input id="nome" type="text" />
+        </div>
+        <div>
+            <label for="email">E-mal</label>
+            <input id="email" type="email" />
+        </div>
+        <div>
+            <label for="senha">Senha</label>
+            <input id="senha" type="password" />
+        </div>
+        <button type="button" onclick="cadastrar()">Cadastrar</button>
+    </form>
+
+    <section id="usuarios"></section>
+
+    <script>
+        let formulario = document.querySelector("form") 
+        let toast = document.querySelector(".toast")
+        let containerUsuarios = document.querySelector("#usuarios")
+        
+        function cadastrar() {
+            const nome = formulario.nome.value
+            const email = formulario.email.value
+            const senha = formulario.senha.value
+           
+            if (nome === '' || !email || !senha) {
+                mostrarToast("Preencha todos os dados", "erro")
+
+                return;
+            }
+
+            containerUsuarios.innerHTML += `
+                <div>
+                    <p>Nome: ${nome} </p>
+                    <p>E-mail: ${email} </p>
+                </div>
+            `
+
+            mostrarToast("Cadastro realizado com sucesso")
+        }
+
+        function mostrarToast(mensagem, tipo = 'info') {
+            toast.innerHTML = mensagem
+
+            if (tipo === 'info') {
+                toast.style.backgroundColor = "rgb(0, 214, 104)"
+            } 
+            
+            if (tipo === "erro") {
+                toast.style.backgroundColor = "rgb(255, 69, 69)"
+            }
+
+            toast.style.transform = "translate(0)"
+
+            setTimeout(() => {
+                toast.style.transform = "translate(120%)"
+            }, 3000);
+        }
+    </script>
+</body>
+</html>

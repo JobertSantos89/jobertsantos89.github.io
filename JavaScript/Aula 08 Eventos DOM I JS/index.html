@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos DOM I</title>
+</head>
+<body>
+    <p id="teste" class="teste">Olá Mundo</p>
+    <p id="teste" class="teste oi">Este é p paragrafo que eu quero</p>
+    <p id="teste" class="teste">Olá Mundo</p>
+    <p id="teste" class="teste">Olá Mundo</p>
+
+    <p class="valor-total">Valor total: R$ <span>300.00</span></p>
+
+    <div>
+        <label>Higiene</label>
+        <input type="checkbox" value="Higiene" checked />
+
+        <label>Alimentação</label>
+        <input type="checkbox" value="Alimentação" />
+    </div>
+
+    <script>
+        /* 
+            querySelector capta a primeira tag que bater com o seletor informado 
+            -> funciona para qualquer seletor que funcionar no CSS
+
+            querySelectorAll capta todas as tags que bater em um seletor especifico
+        */
+        let p = document.getElementById("teste")
+
+        //let paragrafo = document.querySelector("p.teste.oi")
+        let span = document.querySelector(".valor-total span")
+
+        let inputs = document.querySelectorAll("input[type=checkbox]:checked")
+
+        console.log(inputs)
+        for (let input of inputs) {
+            console.log(input.value)
+        }
+        //console.log(span)
+
+        span.innerHTML = 400
+    </script>
+</body>
+</html>

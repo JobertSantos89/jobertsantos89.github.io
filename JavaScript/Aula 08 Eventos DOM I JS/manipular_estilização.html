@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .usuario {
+            background-color: rgb(163, 193, 255);
+            padding: 10px;
+            border-radius: 5px
+        }
+
+        body.dark .usuario {
+            background-color: rgb(83, 83, 83);
+        }
+
+        .dark {
+            background-color: black;
+            color: white
+        }
+    </style>
+</head>
+<body>
+   <!--  <button onclick="mudarModo()">Modo escuro</button> -->
+
+
+    <input oninput="mudarModo()" type="checkbox" />
+    <section>
+        <div class="usuario inadimplente">
+            <p>Nome: Caio</p>
+        </div>
+        <div class="usuario">
+            <p>Nome: Fernanda</p>
+        </div>
+    </section>
+
+    <script>
+        //let usuarios = document.querySelectorAll("section div")
+        let inadimplente = document.querySelector(".inadimplente")
+        let nome = 'Fernanda'
+        let body = document.querySelector("body")
+
+        function mudarModo() {
+            /* É possivel manipular estilizações pelo javascript utilizando
+            a propriedade style que vem em todas as tags */
+
+            //inadimplente.style.backgroundColor = "red"
+            
+            /*
+                Também é possivel manipular utilizando classes, se já houver alguma classe pronta no css
+                 
+                - body.classList.add("dark") -> adiciona uma classe na tag
+                - body.classList.remove("dark") -> remove uma classe da tag
+                - body.classList.toggle("dark") -> Adiciona ou retira a classe, dependendo se ela está presente na  tag ou não
+            */
+            body.classList.toggle("dark")
+          
+        }
+    </script>
+</body>
+</html>
