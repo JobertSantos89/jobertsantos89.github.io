@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*function main() {
+            var numerosPares = [];
+            var numerosImpares = [];
+        
+            for (var i = 0; i < 20; i++) {
+                var num = parseInt(prompt("Digite o " + (i + 1) + "º número inteiro: "));
+                if (num % 2 === 0) {
+                    numerosPares.push(num);
+                } else {
+                    numerosImpares.push(num);
+                }
+            }
+        
+            console.log("Números Pares:");
+            console.log(numerosPares);
+            console.log("Números Ímpares:");
+            console.log(numerosImpares);
+        }
+        
+        main();
+        //Esse programa solicitará que você insira 20 números inteiros, separará esses 
+        //números em pares e ímpares, e em seguida imprimirá os dois conjuntos no console.
+        */
+
+        /*function main() {
+            var numeros = []; // Criando um array vazio para armazenar os números
+        
+            // Pedindo ao usuário para inserir 5 números inteiros
+            for (var i = 0; i < 5; i++) {
+                var num = parseInt(prompt("Digite o " + (i + 1) + "º número inteiro: "));
+                numeros.push(num); // Adicionando o número ao array
+            }
+        
+            // Mostrando os números inseridos
+            console.log("Números inseridos:");
+            for (var i = 0; i < numeros.length; i++) {
+                console.log(numeros[i]);
+            }
+        }
+        
+        main();
+        //Este programa solicita que o usuário insira 5 números inteiros e os armazena em um 
+        //array chamado numeros. Em seguida, ele percorre o array e exibe cada número 
+        //inserido no console.
+        */
+
+        /*function main() {
+            var respostas = []; // Criando um array para armazenar as respostas
+        
+            // Realizando as perguntas e armazenando as respostas
+            respostas.push(prompt("Telefonou para a vítima? (S/N)").toUpperCase());
+            respostas.push(prompt("Esteve no local do crime? (S/N)").toUpperCase());
+            respostas.push(prompt("Mora perto da vítima? (S/N)").toUpperCase());
+            respostas.push(prompt("Devia para a vítima? (S/N)").toUpperCase());
+            respostas.push(prompt("Já trabalhou com a vítima? (S/N)").toUpperCase());
+        
+            // Contando as respostas positivas
+            var positivas = 0;
+            for (var i = 0; i < respostas.length; i++) {
+                if (respostas[i] === 'S') {
+                    positivas++;
+                }
+            }
+        
+            // Emitindo a classificação
+            if (positivas === 2) {
+                console.log("Suspeita");
+            } else if (positivas >= 3 && positivas <= 4) {
+                console.log("Cúmplice");
+            } else if (positivas === 5) {
+                console.log("Assassino");
+            } else {
+                console.log("Inocente");
+            }
+        }
+        
+        main();
+        
+        //Este programa faz 5 perguntas sobre o crime usando a função prompt() e 
+        //armazena as respostas em um array chamado respostas. Em seguida, ele conta 
+        //quantas respostas positivas (S) foram dadas e emite a classificação com base nesse 
+        //número.
+        */
+
+        /*function main() {
+            var numeros = []; // Criando um array para armazenar os números reais
+        
+            // Pedindo ao usuário para inserir 10 números reais
+            for (var i = 0; i < 10; i++) {
+                var num = parseFloat(prompt("Digite o " + (i + 1) + "º número real: "));
+                numeros.push(num); // Adicionando o número ao array
+            }
+        
+            // Mostrando os números na ordem inversa
+            console.log("Números na ordem inversa:");
+            for (var i = numeros.length - 1; i >= 0; i--) {
+                console.log(numeros[i]);
+            }
+        }
+        
+        main();
+        //Este programa solicita que o usuário insira 10 números reais e os armazena 
+        //em um array chamado numeros. Em seguida, ele percorre o array de trás 
+        //para frente e exibe cada número na ordem inversa no console.
+        */
+
+        function main() {
+            var notas = []; // Criando um array para armazenar as notas
+        
+            // Pedindo ao usuário para inserir 4 notas
+            for (var i = 0; i < 4; i++) {
+                var nota = parseFloat(prompt("Digite a " + (i + 1) + "ª nota: "));
+                notas.push(nota); // Adicionando a nota ao array
+            }
+        
+            // Calculando a média das notas
+            var soma = 0;
+            for (var i = 0; i < notas.length; i++) {
+                soma += notas[i];
+            }
+            var media = soma / notas.length;
+        
+            // Mostrando as notas e a média na tela
+            console.log("Notas:");
+            console.log(notas);
+            console.log("Média: " + media.toFixed(2)); // Arredondando a média para 2 casas decimais
+        }
+        
+        main();
+
+        //Este programa solicita que o usuário insira 4 notas e as armazena em um 
+        //array chamado notas. Em seguida, ele calcula a média das notas somando 
+        //todas e dividindo pela quantidade de notas. Por fim, ele imprime as notas e a 
+        //média na tela.
+
+    </script>
+</body>
+</html>
