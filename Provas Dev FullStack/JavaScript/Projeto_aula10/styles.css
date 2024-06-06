@@ -1,0 +1,103 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 600px; /* A largura do container */
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+.input-group {
+    display: flex;
+}
+
+#taskInput {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px 0 0 4px;
+    box-sizing: border-box;
+}
+
+#addTaskButton {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-left: none;
+    background: #28a745;
+    color: white;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+#addTaskButton:hover {
+    background: #218838;
+}
+
+#taskList {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+    max-height: 400px; /* Define a altura máxima da lista */
+    overflow-y: auto;  /* Adiciona barra de rolagem vertical quando necessário */
+}
+
+.task-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    width: calc(100% - 20px); /* Largura fixa igual ao container menos padding */
+    box-sizing: border-box; /* Inclui padding e borda na largura total */
+}
+
+.task-item .task-text {
+    font-weight: bold;
+    word-break: break-word; /* Permite quebra de linha para textos longos */
+    flex: 1; /* Faz o texto ocupar todo o espaço disponível */
+    margin-right: 10px; /* Adiciona espaço entre o texto e o botão remover */
+}
+
+.task-item .task-text.completed {
+    text-decoration: line-through;
+    color: #888;
+}
+
+.task-item button {
+    background: #dc3545;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.task-item button:hover {
+    background: #c82333;
+}
+
+.completed-text {
+    font-weight: bold;
+    background-color: #28a745;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
