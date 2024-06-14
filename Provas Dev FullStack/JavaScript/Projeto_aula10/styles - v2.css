@@ -1,0 +1,153 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif
+}
+
+body {
+    background-color: rgb(194, 220, 255);
+    height: 100vh;
+}
+
+button {
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+header {
+    display: flex;
+    background-color: rgb(1, 81, 202);
+    color: white;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+header button {
+    border: none;
+    background-color: transparent;
+    color: white;
+    padding: 0.5rem 1rem;
+    font-weight: bold;
+}
+
+header button:not(:first-of-type) {
+    border-left: 2px solid white;
+}
+
+main {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem;
+    gap: 3rem;
+}
+
+#form_section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+form {
+    background-color: white;
+    border: 1px solid rgb(196, 196, 196);
+    font-size: 1.3rem;
+    padding: 2rem;
+    border-radius: 6px;
+    box-shadow:  0 0 10px gray;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    width: 100%;
+    max-width: 25rem;
+}
+
+form div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+form input {
+    padding: 0.5rem;
+    width: 100%;
+    max-width: 25rem;
+    height: 3rem;
+    font-size: 1.2rem;
+}
+
+form button {
+    border: none;
+    background-color: rgb(18, 102, 205);
+    padding: 1rem;
+    font-size: 1.3rem;
+    margin-top: 2rem;
+    border-radius: 4px;
+    cursor: pointer;
+    color: white;
+    transition: 0.4s;
+}
+
+form button:hover {
+    background-color: rgb(0, 65, 144);
+}
+
+#tarefas_section {
+    width: 100%;
+}
+
+#tarefas_section h4 {
+    font-size: 1.4rem;
+    text-align: center;
+}
+
+.tarefa {
+    display: flex;
+    align-items: center;
+    background-color: rgb(63, 149, 255);
+    padding: 1.5rem;
+    font-size: 1.3rem;
+    margin-block: 1rem;
+    border-radius: 5px;
+}
+
+.tarefa input {
+    width: 18px;
+    height: 18px;
+    margin-right: 10px;
+}
+
+.tarefa input:checked + p {
+    color: rgb(126, 126, 126);
+    text-decoration: line-through;
+}
+
+.tarefa div {
+    margin-left: auto;
+    display: flex;
+    gap: 2rem;
+}
+
+.tarefa div button {
+    padding: 0.3rem 0.5rem;
+    border: none;
+    border-radius: 5px;
+}
+
+@media(min-width: 950px) { /* media-queries */
+    main {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+    
+    #form_section, #tarefas_section {
+        width: 100%;
+    }
+}

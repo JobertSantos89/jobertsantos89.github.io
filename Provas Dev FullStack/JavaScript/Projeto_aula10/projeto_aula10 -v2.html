@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles - v2.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>Tarefas</title>
+</head>
+<body>
+    <header>
+        <h1>Lista de tarefas</h1>
+
+        <div>
+            <button>Início</button>
+            <button>Tarefas</button>
+            <button>Login</button>
+        </div>
+    </header>
+
+    <main>
+        <section id="form_section">
+            <form>
+                <div>
+                    <label for="nome">Nome</label>
+                    <input id="nome" type="text" required />
+                </div>
+                <div>
+                    <label for="descricao">Descrição</label>
+                    <input id="descricao" type="text" />
+                </div>
+                <button>Cadastrar</button>
+            </form>
+        </section>
+
+        <section id="tarefas_section">
+            <h4>Tarefas concluídas: <span class="concluidas">0</span></h4>
+            <div class="tarefas">
+                <!-- <div class="tarefa">
+                    <input type="checkbox" />
+                    <p>Nome da tarefa</p>
+
+                    <div>
+                        <button>Editar</button>
+                        <button>Deletar</button>
+                    </div>
+                </div> -->
+            </div>
+        </section>
+    </main>
+
+    <script src="./script - v2.js"></script>
+</body>
+</html>
