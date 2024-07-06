@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciamento de Estudantes</title>
+</head>
+<body>
+    <h1>Gerenciamento de Estudantes</h1>
+    <pre id="json-estudantes"></pre>
+
+    <script>
+        // Lista inicial de estudantes
+        let estudantes = [
+            { "id": 1, "nome": "João", "notas": { "matematica": 80, "portugues": 70 } },
+            { "id": 2, "nome": "Maria", "notas": { "matematica": 90, "portugues": 85 } },
+            { "id": 3, "nome": "Pedro", "notas": { "matematica": 75, "portugues": 95 } }
+        ];
+
+        // Função para exibir os estudantes
+        function exibirEstudantes() {
+            document.getElementById('json-estudantes').textContent = JSON.stringify(estudantes, null, 2);
+        }
+
+        // Adiciona um novo estudante
+        function adicionarEstudante(novoEstudante) {
+            estudantes.push(novoEstudante);
+            exibirEstudantes();
+        }
+
+        // Remove um estudante pelo ID
+        function removerEstudante(id) {
+            estudantes = estudantes.filter(estudante => estudante.id !== id);
+            exibirEstudantes();
+        }
+
+        // Atualiza as notas de todos os estudantes em uma determinada disciplina
+        function atualizarNotas(disciplina, novaNota) {
+            estudantes.forEach(estudante => {
+                if (estudante.notas.hasOwnProperty(disciplina)) {
+                    estudante.notas[disciplina] = novaNota;
+                }
+            });
+            exibirEstudantes();
+        }
+
+        // Exibindo a lista inicial de estudantes
+        exibirEstudantes();
+
+        // Exemplos de uso:
+        adicionarEstudante({ "id": 4, "nome": "Ana", "notas": { "matematica": 85, "portugues": 90 } });
+        removerEstudante(2);
+        atualizarNotas("matematica", 100);
+    </script>
+</body>
+</html>

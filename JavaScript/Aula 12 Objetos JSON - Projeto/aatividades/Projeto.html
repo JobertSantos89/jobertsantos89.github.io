@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Livros Online</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        h1, h2 {
+            color: #2c3e50;
+        }
+        
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        form, .busca, .classificacao {
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        form input, .busca input {
+            width: calc(100% - 22px);
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1rem;
+            box-sizing: border-box;
+        }
+        
+        form button, .busca button, .classificacao button {
+            width: calc(100% - 22px);
+            margin: 10px 0;
+            padding: 8px;
+            border: none;
+            background-color: #3498db;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-align: center;
+            display: inline-block;
+        }
+        
+        .busca input {
+            width: calc(100% - 90px); /* Ajuste para que o input de busca seja maior */
+        }
+        
+        .busca button {
+            width: auto; /* Deixando o botão de busca com a largura automática */
+            padding: 8px 16px; /* Ajuste no padding do botão para manter proporções */
+        }
+        
+        form button:hover, .busca button:hover, .classificacao button:hover {
+            background-color: #2980b9;
+        }
+        
+        #catalogo {
+            margin-top: 20px;
+        }
+        
+        #listaLivros .livro {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .livro h3 {
+            margin-top: 0;
+            color: #3498db;
+        }
+        
+        .livro p {
+            margin: 8px 0;
+            line-height: 1.6;
+        }
+        
+        .livro button {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 5px 10px;
+            border: none;
+            background-color: #3498db;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .livro button:hover {
+            background-color: #2980b9;
+        }
+        
+        label {
+            font-weight: bold;
+        }
+        
+        .input-group {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .input-group input {
+            flex: 1;
+            margin-right: 10px;
+        }        
+    </style>
+</head>
+<body>
+    <h1>Catálogo de Livros Online</h1>
+    
+    <div>
+        <h2>Adicionar Livro</h2>
+        <form id="formAdicionarLivro">
+            <label for="titulo">Título:</label>
+            <input type="text" id="titulo" name="titulo" required>
+            <label for="autor">Autor:</label>
+            <input type="text" id="autor" name="autor" required>
+            <label for="genero">Gênero:</label>
+            <input type="text" id="genero" name="genero" required>
+            <label for="ano">Ano de Publicação:</label>
+            <input type="number" id="ano" name="ano" required>
+            <button type="submit">Adicionar Livro</button>
+        </form>
+    </div>
+    
+    <div class="busca">
+        <h2>Buscar Livro</h2>
+        <div class="input-group">
+            <input type="text" id="buscar" placeholder="Buscar por título, autor ou gênero">
+            <button onclick="buscarLivros()">Buscar</button>
+        </div>
+    </div>
+    
+    <div class="classificacao">
+        <h2>Classificar Livros</h2>
+        <button onclick="classificarLivros('titulo')">Por Título</button>
+        <button onclick="classificarLivros('autor')">Por Autor</button>
+        <button onclick="classificarLivros('avaliacao')">Por Avaliação</button>
+    </div>
+    
+    <div id="catalogo">
+        <h2>Catálogo de Livros</h2>
+        <div id="listaLivros"></div>
+    </div>
+
+    <script>
+        let livros = [
+            { "titulo": "O Senhor dos Anéis", "autor": "J.R.R. Tolkien", "genero": "Fantasia", "ano": 1954, "avaliacao": 5 },
+            { "titulo": "1984", "autor": "George Orwell", "genero": "Distopia", "ano": 1949, "avaliacao": 4 },
+            { "titulo": "Orgulho e Preconceito", "autor": "Jane Austen", "genero": "Romance", "ano": 1813, "avaliacao": 5 },
+            { "titulo": "Dom Quixote", "autor": "Miguel de Cervantes", "genero": "Clássico", "ano": 1605, "avaliacao": 4 },
+            { "titulo": "Moby Dick", "autor": "Herman Melville", "genero": "Aventura", "ano": 1851, "avaliacao": 3 },
+            { "titulo": "Guerra e Paz", "autor": "Liev Tolstói", "genero": "Histórico", "ano": 1869, "avaliacao": 5 },
+            { "titulo": "A Revolução dos Bichos", "autor": "George Orwell", "genero": "Sátira", "ano": 1945, "avaliacao": 4 },
+            { "titulo": "Cem Anos de Solidão", "autor": "Gabriel García Márquez", "genero": "Realismo Mágico", "ano": 1967, "avaliacao": 5 },
+            { "titulo": "O Grande Gatsby", "autor": "F. Scott Fitzgerald", "genero": "Ficção", "ano": 1925, "avaliacao": 4 },
+            { "titulo": "Ulisses", "autor": "James Joyce", "genero": "Modernismo", "ano": 1922, "avaliacao": 3 }
+        ];
+
+        function exibirLivros(lista) {
+            const listaLivros = document.getElementById('listaLivros');
+            listaLivros.innerHTML = '';
+            lista.forEach((livro, index) => {
+                const livroDiv = document.createElement('div');
+                livroDiv.classList.add('livro');
+                livroDiv.innerHTML = `
+                    <h3>${livro.titulo}</h3>
+                    <p>Autor: ${livro.autor}</p>
+                    <p>Gênero: ${livro.genero}</p>
+                    <p>Ano de Publicação: ${livro.ano}</p>
+                    <p>Avaliação: ${livro.avaliacao ? livro.avaliacao : 'N/A'}</p>
+                    <label for="avaliacao${index}">Avaliar:</label>
+                    <input type="number" id="avaliacao${index}" min="1" max="5">
+                    <button onclick="avaliarLivro(${index}, document.getElementById('avaliacao${index}').value)">Enviar Avaliação</button>
+                `;
+                listaLivros.appendChild(livroDiv);
+            });
+        }
+
+        document.getElementById('formAdicionarLivro').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const titulo = document.getElementById('titulo').value;
+            const autor = document.getElementById('autor').value;
+            const genero = document.getElementById('genero').value;
+            const ano = document.getElementById('ano').value;
+            const novoLivro = { titulo, autor, genero, ano, avaliacao: null };
+            livros.push(novoLivro);
+            salvarLivros();
+            exibirLivros(livros);
+            this.reset();
+        });
+
+        function buscarLivros() {
+            const busca = document.getElementById('buscar').value.toLowerCase();
+            const resultados = livros.filter(livro => 
+                livro.titulo.toLowerCase().includes(busca) ||
+                livro.autor.toLowerCase().includes(busca) ||
+                livro.genero.toLowerCase().includes(busca)
+            );
+            exibirLivros(resultados);
+        }
+
+        function classificarLivros(criterio) {
+            const listaClassificada = [...livros];
+            listaClassificada.sort((a, b) => {
+                if (criterio === 'avaliacao') {
+                    return (b.avaliacao || 0) - (a.avaliacao || 0);
+                }
+                return a[criterio].localeCompare(b[criterio]);
+            });
+            exibirLivros(listaClassificada);
+        }
+
+        function avaliarLivro(index, avaliacao) {
+            if (avaliacao >= 1 && avaliacao <= 5) {
+                livros[index].avaliacao = Number(avaliacao);
+                salvarLivros();
+                exibirLivros(livros);
+            } else {
+                alert('Avaliação inválida. Por favor, insira um valor entre 1 e 5.');
+            }
+        }
+
+        function salvarLivros() {
+            localStorage.setItem('livros', JSON.stringify(livros));
+        }
+
+        function carregarLivros() {
+            const livrosSalvos = localStorage.getItem('livros');
+            if (livrosSalvos) {
+                livros = JSON.parse(livrosSalvos);
+                exibirLivros(livros);
+            } else {
+                exibirLivros(livros);
+            }
+        }
+
+        // Carregar os livros ao iniciar
+        carregarLivros();
+    </script>
+</body>
+</html>
