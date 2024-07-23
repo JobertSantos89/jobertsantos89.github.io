@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Pacotes</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Sistema de Registro de Pacotes</h1>
+
+        <div class="form-container">
+            <div class="form-group" id="registerForm">
+                <h2>Registrar Pacote</h2>
+                <label for="packageId">ID do Pacote:</label>
+                <input type="text" id="packageId">
+                <button id="registerPackage"><i class="fa fa-plus"></i> Registrar</button>
+            </div>
+
+            <div class="form-group" id="checkForm">
+                <h2>Consultar Pacote</h2>
+                <label for="checkPackageId">ID do Pacote:</label>
+                <input type="text" id="checkPackageId">
+                <button id="checkStatus"><i class="fa fa-search"></i> Consultar</button>
+                <p id="statusMessage"></p>
+            </div>
+        </div>
+
+        <div class="form-group" id="updateForm">
+            <h2>Atualizar Pacote</h2>
+            <label for="updatePackageId">ID do Pacote:</label>
+            <input type="text" id="updatePackageId">
+            <label for="updateStatus">Novo Status:</label>
+            <select id="updateStatus">
+                <option value="Em Trânsito">Em Trânsito</option>
+                <option value="Entregue">Entregue</option>
+                <option value="Cancelado">Cancelado</option>
+            </select>
+            <button id="updatePackage"><i class="fa fa-refresh"></i> Atualizar</button>
+        </div>
+
+        <div class="packages-container">
+            <h2>Pacotes Registrados</h2>
+            <table id="packagesTable">
+                <thead>
+                    <tr>
+                        <th>ID do Pacote</th>
+                        <th>Status</th>
+                        <th>Data de Registro</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Pacotes serão inseridos aqui -->
+                </tbody>
+            </table>
+            <p id="averageDeliveryTime"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
