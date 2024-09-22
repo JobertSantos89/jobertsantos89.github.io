@@ -1,0 +1,34 @@
+Ex01. Faça um programa que faça uma contagem de 1 até 10
+
+-------------------------------------
+
+Ex02. Faça um programa que mostre somente os numeros pares entre 0 e 50 (Ambos inclusos)
+
+-------------------------------------
+
+Ex03. Faça um programa que faça uma contagem regressiva (passo = -1) de 10 até 1
+
+-------------------------------------
+
+Ex04. Faça um programa que peça para o usuário valores para realizar uma contagem:
+
+- inicio
+- final
+- passo
+
+Ao final, mostre uma contagem na tela com os valores fornecidos para o usuário.
+
+-------------------------------------
+
+Ex05. Faça um programa que peça 3 notas (utilizando o for) e mostre a média aritimética das notas
+
+-------------------------------------
+
+Ex06. Faça um programa que peça nome, altura e idade de 5 pessoas, ao final mostre:
+
+- o nome da pessoa mais alta
+- a idade da pessoa mais baixa
+
+----------------------------------
+
+Ex07. Faça um programa que peça uma frase para o usuário, depois mostre na tela quantas vogais existem naquela frase.

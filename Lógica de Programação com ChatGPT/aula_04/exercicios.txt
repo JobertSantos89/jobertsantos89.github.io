@@ -1,0 +1,17 @@
+Ex01. Faça um programa que faça uma contagem regressiva de 10 até 1
+
+Ex02. Peça para o usuário um numero positivo e realize uma contagem de 0 até esse numero.
+
+Ex03. Faça um programa que peça 3 numeros, e mostre a soma deles (Com o WHILE)
+
+Ex04. Faça um programa que peça uma quantidade indefinida de numeros, e pare quando o usuário digitar [999]. Ao final mostre o maior numero digitado (Excluindo o 999).
+
+Ex05 Faça um programa que peça nome, altura e idade de 5 pessoas, ao final mostre:
+
+- o nome da pessoa mais alta
+- a idade da pessoa mais baixa
+
+Ex06 Faça um programa que peça um numero e informe se esse numero é primo ou não
+
+Ex07 Faça um programa que mostre até o 8 numero da sequencia de fibonnacci. 
+Exemplo: 0 1 1 2 3 5 8 13
