@@ -1,0 +1,7 @@
+Ex01. Faça um programa que realize uma contagem de 1 até 10
+
+Ex02. Faça um programa que realize uma contagem de 10 até 1 (Regressiva)
+
+Ex03. Faça um programa que peça um valor de inicio e um valor de fim para o usuário, e realize uma contagem do inicio até o fim
+
+Ex04. Faça um programa que peça uma quantidade indefinida de numeros, a cada numero pergunte se o usuário deseja continuar. Ao final mostre o maior numero digitado.

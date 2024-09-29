@@ -1,0 +1,19 @@
+Ex05. Faça um programa que peça um numero, e informe se ele é 
+positivo, negativo ou neutro (igual a zero)
+
+Ex06. Faça um programa que peça um numero e mostre se o numero é par ou impar (dica: utilize o %)
+
+Ex07. Faça um programa que peça 3 notas de um aluno, 
+calcule a média e mostre sua situação segundo a tabela abaixo:
+- Menor que 4, Reprovado
+- Entre 4 e 6, Recuperação
+- Maior ou igual a 6, Aprovado
+
+Ex08. Faça um programa que peça a idade de uma pessoa e 
+mostre o status de obrigatóriedade de voto dela:
+- Menos que 16, não pode votar
+- Entre 16 (incluso) e 18 (excluso), voto facultativo
+- Entre 18 (incluso) e 70 (excluso), voto obrigatório
+- Maior ou igual a 70, voto facultativo
+
+Ex09. Faça um programa que peça um ano, e mostre na tela se o ano é bissexto ou não (divisivel por 4, sem ser divisivel por 100, exceto os divisiveis por 400)
