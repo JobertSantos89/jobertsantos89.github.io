@@ -41,4 +41,26 @@ Me dê uma dica de qual linha de raciocinio devo utilizar para solucionar (SEM M
 """
 <CODIGO>
 """ 
-"
+--------------------------------------------------------------------------------------
+
+{
+Olá ChatGPT, crie para mim 5 exercicios de estrutura sequencial onde você mostrará as questões como uma Prova! Funcionará da seguinte forma:
+
+
+1. Você manda a questão
+2. Eu respondo a questão
+3. Você responde se a questão está correta, caso esteja errada, mostre a correção detalhada linha por linha 
+4. Mostre a proxima questão e repita o ciclo até ter respondido 5 exercicios
+}
+
+------------------------------------------------------------------
+
+{
+Olá ChatGPT, crie para mim exercicios  de Lógica de Programação: 2 de Estrutura Condicional, 3  de Estruturas de Repetição (Foco no FOR). Onde você mostrará as questões como uma Prova! Funcionará da seguinte forma: 
+
+1. Você manda a questão
+2. Eu respondo a questão
+3. Você responde se a questão está correta, caso esteja errada, mostre a correção 
+4. Mostre a proxima questão e repita o ciclo até ter respondido <Quantidade de Exercicios> exercicios.
+
+ escreva um programa que solicite um número inteiro positivo ao usuário e exiba  '
