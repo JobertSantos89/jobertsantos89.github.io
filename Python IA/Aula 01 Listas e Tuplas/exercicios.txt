@@ -1,0 +1,17 @@
+Ex01. Crie uma lista preenchida com 5 valores:
+
+-> Mostre na tela o elemento na posição 2
+-> Mostre na tela o 2º elemento da lista
+
+Ex02. Faça um programa que começe criando uma lista vazia, e adicione 3 nomes com o "append" utilizando o FOR
+
+Ex03. Faça um programa que peça 5 numeros e adicione-os em uma lista, ao final mostre:
+
+-> Media dos numeros
+-> Maior Numero
+-> Menor Numero
+
+Ex04. Faça um programa que peça 6 numeros, e armazene-os em 2 listas: pares e impares
+Ao final mostre os valores de ambas as listas
+
+Ex05. Faça um programa que peça nome e categoria de N produtos (o usuário irá determinar quando ele irá parar de cadastrar), ao finalizar os cadastros, mostre o nome e categorias registradas para todos os produtos.
