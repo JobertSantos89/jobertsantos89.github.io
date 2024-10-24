@@ -1,0 +1,25 @@
+Ex01. Faça um programa onde o usuário deve inserir 5 frutas, ao finalizar a inserção, mostre todas as frutas unicas que foram inseridas. (Remova os Duplicados)
+
+Ex02. Faça um programa que peça o nome, raça e cor de um animal e armazene as informações em um dicionário. Ao final mostre os valores nas chaves do dicionário.
+
+Ex03. Faça um programa que peça o nome, 3 notas de um aluno, e armazene-os em um dicionário, também armazene nesse dicionário a média e a situação do aluno (>= 6 está aprovado, se não reprovado.)
+
+Ex04. Faça um programa para realizar uma votação que será armazenada em um dicionário, onde os candidatos são as chaves, e o valor é a quantidade de votos. O programa iniciará com os candidatos preenchidos e deverá perguntar quantos votos serão realizados. Ao final mostre o resultado da votação.
+
+Ex05. Faça um programa para cadastrar 3 cursos que serão armazenados em um dicionário onde o nome do curso será a chave, e o valor será outro dicionário contendo "nivel" e "duração"
+Exemplo:
+
+cursos = {
+    'Python': {
+        'nivel': 2,
+        'duracao': 5
+    },
+    'Javascript': {
+        'nivel': 3,
+        'duracao': 7
+    },
+    'Java': {
+        'nivel': 5,
+        'duracao': 10
+    }
+}  
