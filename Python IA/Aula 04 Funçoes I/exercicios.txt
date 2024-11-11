@@ -1,0 +1,7 @@
+Ex01. Faça uma função que receba 2 numeros e retorne a soma entre eles.
+
+Ex02. Faça uma função que receba dois parametros, nome e sobrenome, e retorne o nome completo separado por um espaço.
+
+Ex03. Faça uma função que receba uma string qualquer e retorne a quantidade de vogais presentes naquela string.
+
+Ex04. Faça uma função "fatorial" que receba um numero e retorne o fatorial daquele numero.
