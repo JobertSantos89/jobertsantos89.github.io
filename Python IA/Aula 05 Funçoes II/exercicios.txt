@@ -1,0 +1,30 @@
+Ex01. Faça uma função chamada "calcular_media" que recebe 3 notas como parametro e retorna a média aritimética. 
+-> Faça um programa para utilizar a sua função. 
+
+Ex02. Faça uma função chamada "calcular_imc" que recebe o peso e a altura como parametro e retorna o valor do IMC.
+a) Faça um programa para utilizar a sua função. 
+b) Faça uma função chamada "classificar_imc", que receberá o IMC e irá retornar um dos status: "ABAIXO_DO_PESO", "PESO_IDEAL", "SOBREPESO", "OBESIDADE_I", "OBESIDADE_II", "OBSIDADE_III"
+
+Ex03. Faça uma função chamada "verificar_primo" que recebe um numero inteiro e retorna um booleano (True = Numero é primo, False = Numero não primo)    
+
+Ex04. Faça um programa de calculadora implementando os itens abaixo:
+
+a) Faça uma função chamada "menu" que mostra as opções abaixo na tela, depois pede um valor para o usuário e retorna esse valor somente se ele estiver contido nas opções.
+
+"""
+=== Calculadora ===
+[1] - Somar
+[2] - Subtrair
+[3] - Multiplicar
+[4] - Dividir
+===================
+Digite uma opção: 
+"""
+
+Exemplo 1:
+>>> Digite uma opção: 5 
+Opção Inválida! Digite novamente!
+>>> Digite uma opção: 3
+...
+
+b) Faça uma função calculadora, que recebe 3 parametros: num1, num2 e operacao (operacao pode ser 1=Somar, 2=Subtrair, 3=Multiplicar, 4=Dividir) e retorne o resultado do calculo baseado na operação informada.
