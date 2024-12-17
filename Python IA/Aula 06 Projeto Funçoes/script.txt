@@ -1,0 +1,70 @@
+# Sejam bem vindos a aula 6 do modulo de Python.
+
+# Repositório
+# https://github.com/Davi-Classes/PYTHON2024-DFS114
+
+# --------------------------------------------------------------------------------------------------------------------------
+
+# Projeto 
+
+# Você foi contratado para desenvolver um sistema de uma loja de doces que pretende realizar uma promoção onde um brinde será sorteado entre os clientes do dia. 
+# O sorteio funcionará da seguinte forma:
+
+# - O programa deve mostrar um Menu com 3 opções (Listar vendas, Registrar nova venda, Encerrar)
+# - Ao registrar uma venda, o caixa da loja perguntará ao cliente sobre seu nome, telefone e endereço, inscrevendo essas informações em uma aplicação que ficará executando durante todo o expediente da loja (ou seja: em processo de repetição).
+# - A aplicação guardará todas as ocorrências de clientes informados (em uma lista de dicionários, ou lista de tuplas) até que o caixa seja encerrado.
+# - No final do expediente, o caixa informará a opção de "encerrar", e a aplicação sorteará um dos clientes atendidos ao longo do dia.
+# - A aplicação informará na tela todos os dados do cliente sorteado e se encerrará.
+
+
+# --------------------------------------------------------------------------------------------------------------------------
+# projeto.py
+
+
+clientes = []
+
+def menu():
+    print('========= Loja de Doces =========')
+    print('[1] - Listar Vendas')
+    print('[2] - Registrar Nova Venda')
+    print('[3] - Encerrar')
+    print('=================================')
+
+    while True:
+        option = input('Selecione uma opção -> ')
+
+        if option in ('1', '2', '3'):
+            break
+
+        print('Opção inválida, digite novamente.')
+    
+    return option
+
+def listar_clientes():
+    pass
+
+def registrar_cliente():
+    pass
+
+def sortear():
+    pass
+
+# Código principal.
+def main():
+    while True:
+        opcao = menu()
+
+        if opcao == '1':
+            print('Listando Clientes...')
+            print(clientes)
+        elif opcao == '2':
+            print('Registrando Clientes')
+        elif opcao == '3':
+            print('Encerrando...')
+            break
+
+    print('Fim do Programa')
+
+
+if __name__ == '__main__':
+    main()
