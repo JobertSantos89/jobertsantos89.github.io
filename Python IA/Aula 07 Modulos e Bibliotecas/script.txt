@@ -1,0 +1,45 @@
+Professor Davi - Aula 07 Modulos e Bibliotecas (Python)
+
+Repositório da Turma:
+https://github.com/Davi-Classes/PYTHON2024-DFS114
+
+=================================================
+
+Exercicios
+
+Ex01. Deem uma pesquisada em 2 das bibliotecas a seguir utilizando o phind e/ou o youtube:
+
+- PyAutoGUI
+- Pandas
+- Selenium
+- Flask
+- FastAPI                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+
+
+- Django
+- PyQT
+- Flet
+
+Ex02. Escolham uma biblioteca e implementem um exemplo básico de utilização.
+
+----------------------------------------------------------------------------------------
+pip.txt
+
+1. Vizualizar Bibliotecas Instaladas no Ambiente
+- pip list
+
+2. Instalar Bibliotecas
+- pip install <nome biblioteca>
+
+
+----------------------------------------------------------------------------------------------
+ambientes_virtuais.txt
+
+Ambiente Virtual: Um interpretador Python isolado do interpretador Global
+
+1. Criar o Ambiente Virtual
+- python -m venv .venv
+
+2. Ativar o ambiente virtual (para instalar bibliotecas)
+- .venv\Scripts\activate (Windows)
+- source .venv/bin/activate (Linux)
