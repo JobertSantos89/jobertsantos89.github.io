@@ -1,0 +1,143 @@
+listaA = [1, 2, 3, 4, 5, 6]
+listaB = [7, 8, 9]
+
+
+nomes = ["Walter", "Caio", "Douglas"]
+removido = nomes.pop(1)
+print(nomes)
+print(removido)
+
+
+def calcular_media(n1: int|float, n2: int|float, n3: int|float)->float:
+    """calcula a medias dos numeros passados
+
+    Args:
+        n1 (int | float): entrada
+        n2 (int | float): entrada
+        n3 (int | float): entrada
+
+    Returns:
+        float:media
+    """
+    return (n1+n2+n3)/3
+
+
+numerp_secreto = 42
+print(calcular_media(7,6,numerp_secreto))
+
+def saudar(nome="Aluno"):
+    print(f"Olá {nome},tudo bem?")
+
+saudar("Caio")
+saudar()
+
+def calcular_media2(*args: int|float)->float:
+    return sum(args)/len(args)
+
+print(calcular_media2(1,5,8,631,8741,68481,6544))
+
+def logg(**kwargs):
+    print(kwargs)
+
+logg(nome="Walter", idade=28)
+
+def ex(a,b,c,*args,z=3, x=2, y=5):
+    pass
+
+
+
+from nomes import *
+
+print(galera)
+
+from assets.birunda import nome
+
+======================================================
+numeros = list(range(100))
+
+# pares = []
+# for numero in numeros:
+#     # if numero % 2 == 0:
+#     if not numero % 2:
+#         pares.append(numero)
+
+pares = [x for x in numeros if x %2 == 0]
+
+print(pares)
+
+=======================================================
+
+produtos = [{"nome":"Iphone 10", "preco": 1000, "qnt_estoque": 3},
+            {"nome":"processador Ryzen 5500", "preco": 520, "qnt_estoque": 23},
+            {"nome": "Macbook Pro 13", "preco": 2500, "qnt_estoque": 5},
+            {"nome": "Placa de Vídeo Nvidia RTX 3060", "preco": 2200, "qnt_estoque": 10},
+            {"nome": "Fone de ouvido Bose QuietComfort 45", "preco": 350, "qnt_estoque": 12},
+            {"nome": "Smart TV Samsung 55 polegadas 4K", "preco": 1800, "qnt_estoque": 8},
+            {"nome": "Câmera GoPro HERO11", "preco": 400, "qnt_estoque": 15},
+            {"nome": "Teclado Mecânico Logitech G Pro", "preco": 150, "qnt_estoque": 30},
+            {"nome": "Celular Samsung Galaxy S23", "preco": 1500, "qnt_estoque": 20},
+            {"nome": "Tablet Apple iPad Pro 12.9", "preco": 1200, "qnt_estoque": 7}]
+
+def adicionar_produto(nome, preco, qnt_estoque):
+    produtos.append({"nome": nome, "preco": preco, "qnt_estoque": qnt_estoque})
+    print(f"o produto {nome} foi adicionado")
+
+
+def remover_produto(nome):
+    for produto in produtos:
+        if produto["nome"] == nome:
+            produtos.remove(produto)
+            print(f"o produto {nome} foi removido")
+
+
+def modificar_produto(nome, preco, qnt):
+    remover_produto(nome)
+    adicionar_produto(nome, preco, qnt)
+
+texto = """
+[1] ver produtos
+[2] adicionar produtos
+[3] remover produto
+[4] alterar produto
+[0] sair"""
+
+if __name__ == "__main__":
+    while True:
+        print(texto)
+        opcao = input("digite sua opção: ")
+        match opcao:
+            case "1":
+                for prod in produtos:
+                    print(prod)
+            case "2":
+                nome = input("digite o nome: ")
+                preco = int(input("digite o preco: "))
+                qnt_estoque = int(input("digite a quantidade: "))
+                adicionar_produto(nome, preco, qnt_estoque)
+            case "3":
+                nome = input("digite o nome: ")
+                remover_produto(nome)
+            case "4":
+                nome = input("digite o nome: ")
+                preco = int(input("digite o preco: "))
+                qnt_estoque = int(input("digite a quantidade: "))
+                modificar_produto(nome, preco, qnt_estoque)
+            case "0":
+                break
+            case _:
+                print("opção invalida")
+
+
+========================================
+
+numeros = list(range(20))
+
+pares = []
+for numero in numeros:
+    if numero % 2 == 0:
+        pares.append(numero)
+
+impares = [x for x in numeros if x% 2]
+
+print(len(impares))
+print(len(pares))
