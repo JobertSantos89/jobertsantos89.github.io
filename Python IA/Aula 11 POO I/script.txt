@@ -1,0 +1,255 @@
+Sejam Bem vindos a Aula 11
+
+=====================================================
+Exercicios
+
+
+Ex01. Crie uma classe cachorro que deve conter os atributos:
+
+- nome
+- raça
+- data_nascimento
+
+a. Crie dois objetos através dessa classe, e mostre suas propriedades no terminal.
+
+b. Crie um metódo "latir" que mostra "Cachorro {nome} está latindo... AU AU" na tela. Chame esse metódo com os dois objetos
+
+c. Crie um metódo "calcular_idade" que retorna a idade do cachorro. 
+
+from datetime import date
+
+class Cachorro:
+    def __init__(self, nome: str, raca: str, data_nascimento: date):
+        self.nome = nome
+        self.raca = raca
+
+        # Associacao
+        self.data_nascimento = data_nascimento
+
+    def latir(self):
+        return f'{self.nome} está latindo... AU AU'
+
+    def calcular_idade(self):
+        hoje = date.today()
+        idade = hoje.year - self.data_nascimento.year
+
+        aniversario_nao_ocorreu_este_ano = (
+            self.data_nascimento.month > hoje.month 
+            and self.data_nascimento.day > hoje.day
+        )
+        if aniversario_nao_ocorreu_este_ano:
+            idade -= 1
+
+        return idade
+
+
+    def __str__(self):
+        return f"Cachorro(nome='{self.nome}', raca='{self.raca}', data_nascimento={self.data_nascimento})"
+
+
+dog1 = Cachorro('Xena', 'Pitbull', date(2008, 2, 12))
+
+print(dog1)
+print(dog1.latir())
+print(f'Idade da {dog1.nome}: {dog1.calcular_idade()}')
+
+=============================================================
+
+Ex02. Crie uma classe "Carro" que deve conter as propriedades:
+
+- marca
+- modelo
+- ano
+- cor
+- velocidade_maxima
+- velocidade_atual (começará como 0)
+
+O construtor não precisará passar a velocidade_atual. 
+a. Crie um carro
+b. Adicione os metódos "acelerar" e "freiar" que receberão uma velocidade para aumentar ou diminuir a propriedade "velocidade_atual" onde ela não pode ser menor que 0 e não pode ser maior que a velocidade máxima do carro.
+
+class Carro:
+    def __init__(
+        self, 
+        marca: str, 
+        modelo: str, 
+        ano: int, 
+        cor: str, 
+        velocidade_maxima: float
+    ):
+        self.marca = marca
+        self.modelo = modelo
+        self.ano = ano
+        self.cor = cor
+        self.velocidade_maxima = velocidade_maxima
+        self.velocidade_atual = 0
+
+    def acelerar(self, velocidade: float) -> bool:
+        if self.velocidade_atual + velocidade >= self.velocidade_maxima:
+            self.velocidade_atual = self.velocidade_maxima
+        else:
+            self.velocidade_atual += velocidade
+
+        pode_acelerar = self.velocidade_atual != self.velocidade_maxima
+        return pode_acelerar
+        
+    def frear(self, velocidade: float) -> bool:
+        if self.velocidade_atual - velocidade <= 0:
+            self.velocidade_atual = 0
+        else:
+            self.velocidade_atual -= velocidade
+        
+        pode_frear = self.velocidade_atual != 0
+        return pode_frear
+
+
+print('Você acabou de comprar um carro...')
+
+marca = input('De qual marca é? ')
+modelo = input('De qual modelo é? ')
+ano = int(input('De qual ano é? '))
+cor = input('De qual cor é?')
+velocidade_maxima = float(input('De qual é a velocidade maxima do carro?'))
+
+carro = Carro(marca, modelo, ano, cor, velocidade_maxima)
+
+print('Você está saindo da concessionária, e acabou de entrar no carro...')
+while True:
+    print(f'Velocidade Atual: {carro.velocidade_atual} km/h')
+    print(f'Velocidade Máxima: {carro.velocidade_maxima} km/h')
+
+    print('O que deseja fazer?')
+    print('[1] - Acelerar')
+    print('[2] - Frear')
+    print('[3] - Sair do Carro')
+    opcao = input('--> ')
+
+    if opcao == '1':
+        velocidade = float(input('Quanto deseja acelerar?'))
+        pode_acelerar = carro.acelerar(velocidade)
+        
+        if not pode_acelerar:
+            print('Você atingiu a velocidade máxima.')
+
+    elif opcao == '2':
+        velocidade = float(input('Quanto deseja frear?'))
+
+        pode_frear = carro.frear(velocidade)
+        if not pode_frear:
+            print('Você parou o carro.')
+
+    elif opcao == '3':
+        print('Você saiu do carro.')
+
+        if carro.velocidade_atual != 0:
+            print('Você morreu porque saiu do carro em movimento. BURRO')
+
+        break
+
+
+=====================================================================
+
+Ex03. Crie uma classe "Conta" que deve conter as propriedades:
+
+- titular
+- numero
+- saldo (Será opcional e não pode ser negativo, se não for passado receberá 0)
+
+A conta terá os seguintes metódos:
+"depositar(valor)"
+"sacar(valor)"
+"transferir(valor, conta_destino)"
+
+Lembre-se que ao sacar, o valor de saque não pode ser maior que o saldo atual da conta.
+
+
+=====================================================
+poo1.py
+
+# Programação Orientada a Objetos
+from datetime import date
+
+# Classes
+class Pessoa:
+    # Metódo Construtor
+    def __init__(self, nome: str, altura: float, data_nascimento: date):
+        # Atributos
+        self.nome = nome
+        self.altura = altura
+        self.data_nascimento = data_nascimento
+
+    # Metódos (Funções dentro de Classes)
+    def calcular_idade(self) -> int:
+        return (date.today() - self.data_nascimento).days // 365
+
+# Objetos
+pessoa1 = Pessoa('Ermesson', 1.83, date(1997, 8, 21))
+pessoa2 = Pessoa('Ricardo', 1.83, date(1992, 1, 10))
+
+# Acessando atributos dos objetos
+print(pessoa1.nome)
+print(pessoa2.nome)
+
+# Chamar Metódos
+print(pessoa1.calcular_idade())
+print(pessoa2.calcular_idade())
+---------------------------------------------------------------
+poo2.py
+# Tudo é um OBJETO!
+# Logo tudo pertence a uma classe e tem
+# ATRIBUTOS e METÓDOS
+
+# String
+nome = 'Davi'
+print(nome.upper()) # Metódo UPPER
+print(type(nome))
+
+# Lista
+minha_lista = []
+minha_lista.append('AAA') # metódo append
+print(type(minha_lista))
+
+---------------------------------------------------------------
+poo3.py
+
+class INSS:
+    taxa = 0.1
+
+    def calcular(self, valor: float):
+        return valor * self.taxa
+    
+total = 500
+total = total - INSS().calcular(total)
+
+-----------------------------------------------------------------
+revisao.py
+
+
+# Paradigma Procedural
+from datetime import date
+
+nome = 'Lucas'
+altura = 1.78
+data_nascimento = date(1997, 12, 18)
+
+idade = (date.today() - data_nascimento).days // 365
+
+
+# Paradigma Funcional
+pessoa1 = {
+    'nome': 'Lucas',
+    'altura': 1.78,
+    'data_nascimento': date(1997, 12, 18)
+}
+
+pessoa2 = {
+    'nome': 'Davi',
+    'altura': 1.72,
+    'data_nascimento': date(2004, 1, 14)
+}
+
+def calcular_idade(pessoa: dict) -> int:
+    return (date.today() - pessoa.get('data_nascimento')).days // 365
+
+print(calcular_idade(pessoa1))
+print(calcular idade(pessoa2))

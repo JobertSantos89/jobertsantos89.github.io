@@ -1,0 +1,24 @@
+{
+  "tarefas": {
+    "1": {
+      "nome": "Editar Video UV",
+      "data_inicio": "19/01/2025",
+      "data_limite": "22/01/2025"
+    },
+    "2": {
+      "nome": "Estender as roupas no varal",
+      "data_inicio": "19/01/2025",
+      "data_limite": "20/01/2025"
+    },
+    "3": {
+      "nome": "Nova Tarefa",
+      "data_inicio": "14/02/2025",
+      "data_limite": "14/02/2025"
+    },
+    "4": {
+      "nome": "Teste",
+      "data_inicio": "12/12/2024",
+      "data_limite": "12/01/2025"
+    }
+  }
+}

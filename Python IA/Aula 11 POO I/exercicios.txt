@@ -1,0 +1,41 @@
+Ex01. Crie uma classe cachorro que deve conter os atributos:
+
+- nome
+- raça
+- data_nascimento
+
+a. Crie dois objetos através dessa classe, e mostre suas propriedades no terminal.
+
+b. Crie um metódo "latir" que mostra "Cachorro {nome} está latindo... AU AU" na tela. Chame esse metódo com os dois objetos
+
+c. Crie um metódo "calcular_idade" que retorna a idade do cachorro. 
+
+------------------------------------------------------------------
+Ex02. Crie uma classe "Carro" que deve conter as propriedades:
+
+- marca
+- modelo
+- ano
+- cor
+- velocidade_maxima
+- velocidade_atual (começará como 0)
+
+O construtor não precisará passar a velocidade_atual. 
+a. Crie um carro
+b. Adicione os metódos "acelerar" e "freiar" que receberão uma velocidade para aumentar ou diminuir a propriedade "velocidade_atual" onde ela não pode ser menor que 0 e não pode ser maior que a velocidade máxima do carro.
+
+
+------------------------------------------------------------------
+
+Ex03. Crie uma classe "Conta" que deve conter as propriedades:
+
+- titular
+- numero
+- saldo (Será opcional e não pode ser negativo, se não for passado receberá 0)
+
+A conta terá os seguintes metódos:
+"depositar(valor)"
+"sacar(valor)"
+"transferir(valor, conta_destino)"
+
+Lembre-se que ao sacar, o valor de saque não pode ser maior que o saldo atual da conta.

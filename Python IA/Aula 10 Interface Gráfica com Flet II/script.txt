@@ -1,0 +1,78 @@
+Sejam Bem Vindos a Aula 10 de Python
+
+Material TinyDB:
+https://www.canva.com/design/DAFzC5CulD8/04iwNi332-WTnLZhA--Yxw/edit
+
+==============================================
+Revisão Ambientes Virtuais
+
+Ambientes Virtuais
+
+- Criar um Python isolado do Ambiente Global
+
+Criando Ambiente Virtual
+1. python -m venv .venv
+
+Ativando Ambiente Virutal
+2. .venv\Scripts\activate
+
+OBS: Caso não ative o seu ambiente, execute o comando abaixo no PowerSheel.
+-> Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
+
+Criando Requirements
+3. pip freeze > requirements.txt
+
+Instalando bibliotecas individualmente
+4. pip install <biblioteca>
+
+Instalando bibliotecas do requirements
+5. pip install -r requirements.txt
+
+--------------------------------------------------------------------------------------------
+revisao.py
+	
+import db
+
+
+nome = input('Digite uma tarefa: ')
+data_inicio = input('Digite a data de inicio [dd/MM/yyyy]: ')
+data_limite = input('Digite a data limite [dd/MM/yyyy]: ')
+ 
+nova_tarefa = {
+    'nome': nome,
+    'data_inicio': data_inicio,
+    'data_limite': data_limite
+}
+
+db.cadastrar_tarefa(nova_tarefa)
+
+dados = db.listar_tarefas()
+print(dados)
+
+
+--------------------------------------------------------------------------------------------------
+db.py
+
+from tinydb import TinyDB
+
+tarefas = TinyDB('./db.json', indent=2).table('tarefas')
+
+def listar tarefas():
+    return [
+        {'id': int(tarefa.doc_id), **tarefa} 
+        for tarefa in tarefas.all()
+    ]
+
+def atualizar_tarefa(id: int, tarefa_editada: dict):
+    tarefa = tarefas.get(doc_id=id)
+
+    if tarefa is None:
+        raise RuntimeError('Tarefa não encontrada.')
+    
+    tarefas.update(tarefa_editada, doc_ids=[id])
+
+def excluir_tarefa(id: int):
+    tarefas.remove(doc_ids=[id])
+
+def cadastrar_tarefa(tarefa: dict):
+    tarefas.insert(tarefa)

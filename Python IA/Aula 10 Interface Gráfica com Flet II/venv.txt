@@ -1,0 +1,19 @@
+Ambientes Virtuais
+
+- Criar um Python isolado do Ambiente Global
+
+Criando Ambiente Virtual
+1. python -m venv .venv
+
+Ativando Ambiente Virutal
+2. .venv\Scripts\activate
+
+Criando Requirements
+3. pip freeze > requirements.txt
+
+Instalando bibliotecas individualmente
+4. pip install <biblioteca>
+
+Instalando bibliotecas do requiriments
+5. pip install -r requirements.txt
+
