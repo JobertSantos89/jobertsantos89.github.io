@@ -1,0 +1,42 @@
+Ex01. Crie uma classe "Pessoa" que deve ter os campos:
+
+- nome: str
+- idade: int
+- endereco: Endereco
+
+A propriedade "endereco" será da classe "Endereco" que terá as propriedades
+
+- cep
+- rua
+- bairro
+- numero
+- cidade
+- estado
+
+O endereço deve ter um metódo "formatar" que irá retornar uma string no seguinte formato:
+"{Rua}, {Numero} -  {Bairro} | {Cidade} - {Estado}, {Cep}"
+
+Crie uma pessoa e mostre o endereço formatado através do "pessoa.endereco.formatar()"
+
+-----------------------------------------------
+Ex02. Crie uma classe "Produto", que irá conter as propriedades
+
+-> nome: str
+-> quantidade: int
+-> valor: float
+
+Depois crie uma classe "Pedido" com as propriedades
+
+-> produtos: list[Produto]
+-> valor_total: float (É a somatorio da multiplicação entre a quantidade e o valor de todos os produtos do pedido)
+
+E metódos:
+
+-> adicionar_produto(produto)
+-> calcular_valor_total()
+
+Ao criar um pedido você pode passar a lista de produtos, caso não seja informado começará vazia.
+
+Lembre-se que ao inicializar o pedido com produtos ou adicionar um novo produto, o valor_total do Pedido deve ser atualizado.
+
+Se um produto com um nome existente for adicionado ao pedido, você deve somente somar as quantidades, e calcular novamente o valor total.
