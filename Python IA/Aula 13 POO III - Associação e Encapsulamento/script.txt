@@ -1,0 +1,244 @@
+Sejam Bem Vindos a Aula 13.
+===================================================
+Ex01. Crie uma classe "Pessoa" que deve ter os campos:
+
+- nome: str
+- idade: int
+- endereco: Endereco
+
+A propriedade "endereco" será da classe "Endereco" que terá as propriedades
+
+- cep
+- rua
+- bairro
+- numero
+- cidade
+- estado
+
+O endereço deve ter um metódo "formatar" que irá retornar uma string no seguinte formato:
+"{Rua}, {Numero} -  {Bairro} | {Cidade} - {Estado}, {Cep}"
+
+Crie uma pessoa e mostre o endereço formatado através do "pessoa.endereco.formatar()"
+
+-------------------------------------------------------------------------------------------
+Ex02. Crie uma classe "Produto", que irá conter as propriedades
+
+-> nome: str
+-> quantidade: int
+-> valor: float
+
+Depois crie uma classe "Pedido" com as propriedades
+
+-> produtos: list[Produto]
+-> valor_total: float (É a somatorio da multiplicação entre a quantidade e o valor de todos os produtos do pedido)
+
+E metódos:
+
+-> adicionar_produto(produto)
+-> calcular_valor_total()
+
+Ao criar um pedido você pode passar a lista de produtos, caso não seja informado começará vazia.
+
+Lembre-se que ao inicializar o pedido com produtos ou adicionar um novo produto, o valor_total do Pedido deve ser atualizado.
+
+Se um produto com um nome existente for adicionado ao pedido, você deve somente somar as quantidades, e calcular novamente o valor total.
+
+
+====================================================
+banco_infinity/conta.py
+
+from uuid import uuid4
+
+
+class Conta:
+    def __init__(self, titular: str, saldo: float = 0):
+        self.numero = str(uuid4())[:6]
+        self.titular = titular
+        self.saldo = saldo
+
+    def depositar(self, valor: float):
+        if valor <= 0:
+            raise ValueError('O valor de depósito deve ser positivo.')
+        
+        self.saldo += valor
+
+    def sacar(self, valor: float):
+        if valor <= 0:
+            raise ValueError('O valor de saque deve ser positivo.')
+        
+        if valor > self.saldo:
+            raise ValueError('O valor de saque não pode ser maior que o saldo da conta.')
+
+        self.saldo -= valor
+
+    def transferir(self, valor: float, conta: 'Conta'):
+        self.sacar(valor)
+        conta.depositar(valor)
+
+    def info(self):
+        print('========= INFOS =========')
+        print(f'Titular: {self.titular}')
+        print(f'Numero: {self.numero}')
+        print(f'Saldo: R$ {self.saldo}')
+
+    def __str__(self):
+        return f'<Conta - {self.titular} (R${self.saldo})>'
+
+---------------------------------------------------------------------
+banco_infinity/banco.py
+
+import os
+from banco_infinity.conta import Conta
+
+
+class Banco:
+    def __init__(self, contas: list[Conta] = []):
+        self.contas = contas
+
+    def buscar_pelo_numero(self, numero: str) -> Conta | None:
+        for conta in self.contas:
+            if conta.numero == numero:
+                return conta
+            
+        return None
+
+    def adicionar_conta(self, conta: Conta):
+        self.contas.append(conta)
+
+---------------------------------------------------------------------
+banco_infinity/view.py
+
+import os
+from banco_infinity.banco import Banco
+from banco_infinity.conta import Conta
+
+
+class ContaView:
+    def __init__(self, banco: Banco, conta: Conta):
+        self.banco = banco
+        self.conta = conta
+        self.options = {
+            'INFO': '1',
+            'DEPOSITAR': '2',
+            'SACAR': '3',
+            'TRANSFERIR': '4',
+            'VOLTAR': '5'
+        }
+
+    def run(self):
+        while True:
+            os.system('cls')
+            option = self.menu()
+
+            if option == self.options['INFO']:
+                self.conta.info()
+            elif option == self.options['DEPOSITAR']:
+                self.depositar()
+            elif option == self.options['SACAR']:
+                self.sacar()
+            elif option == self.options['TRANSFERIR']:
+                self.transferir()
+            elif option == self.options['VOLTAR']:
+                break
+            else:
+                print('Opção Inválida.')
+        
+            input('Aperte <ENTER> para continuar...')
+
+    def menu(self):
+        print(f'======= Conta Nº {self.conta.numero} =======')
+        print('[1] - Info')
+        print('[2] - Depositar')
+        print('[3] - Sacar')
+        print('[4] - Transferir')
+        print('[5] - Voltar')
+        print(f'==============================')
+        
+        option = input('Selecione uma Opção\n--> ')
+        return option
+
+    def depositar(self):
+        try:
+            valor = float(input('Quanto deseja depositar? ')) 
+            self.conta.depositar(valor)
+        except ValueError as err:
+            print(err.args[0])
+
+    def sacar(self):
+        try:
+            valor = float(input('Quanto deseja sacar? ')) 
+            self.conta.sacar(valor)
+        except ValueError as err:
+            print(err.args[0])
+
+    def transferir(self):
+        try:
+            numero = input('Para qual conta deseja transferir (Nº da Conta)? ')
+            conta_destino = self.banco.buscar_pelo_numero(numero)
+
+            if conta_destino is None:
+                raise ValueError('Conta não encontrada.')
+
+            valor = float(input('Quanto deseja transferir? ')) 
+            self.conta.transferir(valor, conta_destino)
+        except ValueError as err:
+            print(err.args[0])
+
+
+class BancoView:
+    def __init__(self, banco: Banco):
+        self.banco = banco
+        self.options = {
+            'CRIAR_CONTA': '1',
+            'ENTRAR_CONTA': '2',
+            'SAIR': '3'
+        }
+
+    def run(self):
+        while True:
+            os.system('cls')
+            option = self.menu()
+
+            if option == self.options['CRIAR_CONTA']:
+                self.criar_conta()
+            elif option == self.options['ENTRAR_CONTA']:
+                self.entrar_conta()
+            elif option == self.options['SAIR']:
+                break
+            else:
+                print('Opção Inválida.')
+
+            input('Aperte <ENTER> para continuar...')
+
+    def menu(self) -> str:
+        print('======= BANCO INFINITY =======')
+        print('[1] - Criar Conta')
+        print('[2] - Entrar na Conta')
+        print('[3] - Sair')
+        print('==============================')
+
+        option = input('Selecione uma Opção\n--> ')
+        return option
+    
+    def criar_conta(self):
+        titular = input('Digite o titular da conta: ')
+        conta = Conta(titular)
+
+        self.banco.adicionar_conta(conta)
+        print('Conta cadastrada com sucesso.')
+
+        conta.info()
+
+    def entrar_conta(self):
+        numero = input('Digite o numero da conta: ')
+        conta = self.banco.buscar_pelo_numero(numero)
+
+        if conta is None:
+            print('Conta não encontrada.')
+            return
+        
+        conta_view = ContaView(self.banco, conta)
+        conta_view.run()
+
+
+
